@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    padding: 20px;
+}
+
+/* BIENVENIDA */
+.bienvenida {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.bienvenida .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bienvenida h1, .bienvenida h2, .bienvenida p {
+    font-family: "Concert One", sans-serif; /* Mismo tipo de letra */
+}
+
+.bienvenida h1 {
+    color: #000000;
+    font-weight: 700; /* Negrita más intensa */
+    margin-bottom: 20px; /* Espacio inferior */
+    font-style: normal;
+    font-size: 3.5em; /* Tamaño del h1 */
+    overflow: hidden; /* Oculta el texto que se desborda */
+    white-space: nowrap; /* Evita el salto de línea */
+    animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite; /* Animación de escritura */
+}
+
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #007bff;
+    }
+}
+
+.bienvenida h2 {
+    font-weight: 600; /* Negrita más intensa */
+    font-style: normal;
+    font-size: 40px; /* Tamaño del h2 */
+    color: #921f2e; /* Color del texto */
+    margin-bottom: 20px; /* Espacio inferior */
+    background: linear-gradient(90deg, #921f2e, #ff4081, #921f2e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { background-position: -500px; }
+    100% { background-position: 500px; }
+}
+
+.bienvenida p {
+    font-size: 1.2em; /* Tamaño del texto */
+    color: #666; /* Color del texto */
+    line-height: 1.6; /* Altura de línea */
+    margin-bottom: 30px; /* Espacio inferior */
+}
+
+@media (max-width: 768px) {
+    .bienvenida {
+      padding: 60px 10px; /* Ajuste de espaciado interno */
+    }
+
+    .bienvenida h1 {
+      margin-bottom: 15px; /* Ajuste de espacio inferior */
+    }
+
+    .bienvenida h2 {
+      font-size: 1.8em; /* Reducción del tamaño del texto */
+      margin-bottom: 15px; /* Ajuste de espacio inferior */
+    }
+
+    .bienvenida p {
+      font-size: 1em; /* Reducción del tamaño del texto */
+      margin-bottom: 20px; /* Ajuste de espacio inferior */
+    }
+}
+
+.video-container {
+    position: relative;
+    width: 90%; /* Ajusta el ancho según sea necesario */
+    max-width: 60%; /* Tamaño máximo del reproductor */
+    padding-top: 30%; /* Relación de aspecto 16:9 */
+    background-color: #000;
+    border: 1px solid #ddd; /* Opcional: para agregar un borde al contenedor */
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .video-container {
+        width: 100%;
+        max-width: none; /* Elimina el ancho máximo en pantallas pequeñas */
+        padding-top: 56.25%; /* Mantiene la relación de aspecto 16:9 */
+    }
+}
